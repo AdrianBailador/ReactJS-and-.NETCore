@@ -102,7 +102,7 @@ namespace apiUsuario.Controllers
             return usuarios;
         }
 
-        [HttpGet("{username/password}")]
+        [HttpGet("{username}/{password}")]
         public ActionResult<List<Usuarios>> GetIniciarSesion(string username, string password)
         {
             var usuarios =  _context.usuarios.Where(usuario=>usuario.username.Equals(username) && usuario.password.Equals(password)).ToList();
